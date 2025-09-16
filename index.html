@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to PDF Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- jsPDF Library (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Image to PDF Converter</h1>
+
+        <div class="upload-section">
+            <label for="imageUpload" class="upload-button">
+                Select Images
+                <input type="file" id="imageUpload" accept="image/*" multiple>
+            </label>
+            <p id="fileCount">No files selected</p>
+        </div>
+
+        <div id="imagePreviewContainer">
+            <!-- Image previews will be added here -->
+        </div>
+
+        <div class="options-section">
+            <label for="pageSize">Page Size:</label>
+            <select id="pageSize">
+                <option value="a4">A4</option>
+                <option value="letter">Letter</option>
+                <option value="a3">A3</option>
+                <option value="legal">Legal</option>
+            </select>
+
+            <label for="orientation">Orientation:</label>
+            <select id="orientation">
+                <option value="portrait">Portrait</option>
+                <option value="landscape">Landscape</option>
+            </select>
+
+            <label for="imageFit">Image Fit:</label>
+            <select id="imageFit">
+                <option value="contain">Contain (Fit Entire Image)</option>
+                <option value="cover">Cover (Fill Page, Crop if needed)</option>
+            </select>
+        </div>
+
+        <button id="convertToPdfButton" disabled>Convert to PDF</button>
+        <p id="statusMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
